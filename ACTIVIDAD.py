@@ -9,7 +9,7 @@ def resta(a, b):
     """Realiza la resta de dos números."""
     return a - b
 
-def multiplicacion(a, b):
+def multiplicacionn(a, b):
     """Realiza la multiplicación de dos números."""
     return a * b
 
@@ -74,7 +74,7 @@ def main():
                 resultado = resta(num1, num2)
                 print(f"\n✅ Resultado de la resta: {resultado}")
             elif operacion == '3':
-                resultado = multiplicacion(num1, num2)
+                resultado = multiplicacionn(num1, num2)
                 print(f"\n✅ Resultado de la multiplicación: {resultado}")
             elif operacion == '4':
                 resultado = division(num1, num2)
