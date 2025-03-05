@@ -11,31 +11,54 @@ def multiplicacion(a, b):
 
 def division(a, b):
     if b == 0:
-        return "Error: No se puede dividir entre cero."
+        raise ValueError("Error: No se puede dividir entre cero.")
     return a / b
 
-def main():
-    print("Calculadora Simple")
+def obtener_numero(mensaje):
+    while True:
+        try:
+            return float(input(mensaje))
+        except ValueError:
+            print("Por favor, ingresa un número válido.")
+
+def mostrar_menu():
+    print("\nCalculadora Simple")
     print("Operaciones disponibles:")
     print("1. Suma")
     print("2. Resta")
     print("3. Multiplicación")
     print("4. División")
+    print("5. Salir")
 
-    operacion = input("Selecciona una operación (1/2/3/4): ")
-    num1 = float(input("Ingresa el primer número: "))
-    num2 = float(input("Ingresa el segundo número: "))
+def main():
+    while True:
+        mostrar_menu()
+        operacion = input("Selecciona una operación (1/2/3/4/5): ")
 
-    if operacion == '1':
-        print(f"Resultado: {suma(num1, num2)}")
-    elif operacion == '2':
-        print(f"Resultado: {resta(num1, num2)}")
-    elif operacion == '3':
-        print(f"Resultado: {multiplicacion(num1, num2)}")
-    elif operacion == '4':
-        print(f"Resultado: {division(num1, num2)}")
-    else:
-        print("Operación no válida.")
+        if operacion == '5':
+            print("Saliendo de la calculadora...")
+            break
+
+        if operacion not in ['1', '2', '3', '4']:
+            print("Operación no válida. Por favor, selecciona una opción válida.")
+            continue
+
+        num1 = obtener_numero("Ingresa el primer número: ")
+        num2 = obtener_numero("Ingresa el segundo número: ")
+
+        try:
+            if operacion == '1':
+                resultado = suma(num1, num2)
+            elif operacion == '2':
+                resultado = resta(num1, num2)
+            elif operacion == '3':
+                resultado = multiplicacion(num1, num2)
+            elif operacion == '4':
+                resultado = division(num1, num2)
+
+            print(f"Resultado: {resultado}")
+        except ValueError as e:
+            print(e)
 
 if __name__ == "__main__":
     main()
