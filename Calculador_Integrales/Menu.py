@@ -27,7 +27,7 @@ class Principal(Frame):
         AppDefinida(root)
         root.eval( 'tk::PlaceWindow . center')
         root.title("Integrales definidas")
-        root.iconbitmap("./Img/Logo.ico")
+        root.iconbitmap("C:\\Users\\AzarielAlvarez\\ACTIVIDAD04\\Calculador_Integrales\\Img\\Logo.ico")
         root.resizable(0,0)
         root.mainloop()
         
@@ -36,7 +36,9 @@ class Principal(Frame):
         LongArco(root)
         root.eval( 'tk::PlaceWindow . center')
         root.title("Longitud del arco ")
-        root.iconbitmap("./Img/Logo.ico")
+        root.iconbitmap("C:\\Users\\AzarielAlvarez\\ACTIVIDAD04\\Calculador_Integrales\\Img\\Logo.ico")
+
+
         root.resizable(0,0)
         root.mainloop()
     def createWidget(self):
@@ -58,12 +60,14 @@ class Principal(Frame):
 
 root=Tk()
 app=Principal(root)
-root.iconbitmap("./Img/Logo.ico")
+root.iconbitmap("C:\\Users\\AzarielAlvarez\\ACTIVIDAD04\\Calculador_Integrales\\Img\\Logo.ico")
+
+
 root.title("Cálculo Integral")
-ima1=ImageTk.PhotoImage(Image.open("./Img/diseño.ico"))
+ima1=ImageTk.PhotoImage(Image.open("C:\\Users\\AzarielAlvarez\\ACTIVIDAD04\\Calculador_Integrales\\Img\\diseño.ico"))
 Label(root,image=ima1,bg="#e6ffd1").place(x=150,y=100)
 
-ima2=ImageTk.PhotoImage(Image.open("./Img/diseño1.ico"))
+ima2=ImageTk.PhotoImage(Image.open("C:\\Users\\AzarielAlvarez\\ACTIVIDAD04\\Calculador_Integrales\\Img\\diseño1.ico"))
 Label(root,image=ima2,bg="#e6ffd1").place(x=400,y=100)
 
 root.eval( 'tk::PlaceWindow . center') #Esto es un codigo ..jjaaj...para centrar la ventana..
